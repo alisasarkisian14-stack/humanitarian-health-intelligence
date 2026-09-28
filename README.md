@@ -57,3 +57,15 @@ humanitarian-health-intelligence/
 ├── notebooks/
 ├── data/
 └── docs/
+## Exploratory Analysis
+
+The initial analysis focuses on understanding each source before integration, including:
+
+- data structure and unit of observation
+- geographic and temporal coverage
+- missingness and data-quality issues
+- consistency of geographic identifiers
+- unusual values and potential outliers
+- preliminary relationships between candidate indicators and cholera burden
+
+Cross-dataset exploration is used to identify potentially useful modelling features rather than to establish causal relationships.
