@@ -1,15 +1,22 @@
 Research Notebooks
-This directory holds the five cleaned, verified presentation notebooks for the Humanitarian Health Intelligence respiratory early-warning project. They are organised in study order; the longer originals remain in the Databricks workspace to preserve the experimental audit trail.
-Order	Notebook	What it verifies
-01	[Exploratory Data Analysis](01_exploratory_data_analysis_clean.py)	Source feasibility, quality checks and rationale for pivoting from cholera to respiratory surveillance
-02	[Machine Learning Baselines](02_machine_learning_baselines_clean.py)	Version 1 frozen dataset, sharp-rise heuristic, Logistic Regression, validation diagnostics
-03	[Data Enrichment](03_data_enrichment_final.py)	Past-only feature engineering, surveillance availability, four-fold development queue and historical enrichment decisions
-04	[Model Selection](04_model_selection_final.py)	V2/V3 selection history, frozen 12-candidate experiment, formal Gate-4 no-promotion record and retained RF59-D2 shadow reference
-05	[Corrected Temporal Modelling](05_corrected_temporal_modelling_final.py)	Matched seven-period RF59 versus THREE_HEAD scores, ranking, disease-specific onset episodes and bootstrap uncertainty
+This directory contains the five cleaned, Databricks-verified notebooks for Humanitarian Health Intelligence, a retrospective respiratory-surveillance early-warning research project.
+Notebook guide
+#	Notebook	Purpose
+01	[Exploratory Data Analysis](01_exploratory_data_analysis_clean.py)	Assess source quality, feasibility and the shift from cholera to respiratory surveillance.
+02	[Machine Learning Baselines](02_machine_learning_baselines_clean.py)	Reproduce the frozen Version 1 sharp-rise benchmark and Logistic Regression baseline.
+03	[Data Enrichment](03_data_enrichment_final.py)	Verify past-only feature engineering, surveillance coverage and historical enrichment decisions.
+04	[Model Selection](04_model_selection_final.py)	Audit the historical model experiments, promotion criteria and retained registered RF59-D2 shadow reference.
+05	[Corrected Temporal Modelling](05_corrected_temporal_modelling_final.py)	Reproduce matched RF59 versus THREE_HEAD comparisons, Top-K rankings, episode detection and uncertainty.
 
 
-Final research model: THREE_HEAD. This model is selected for the retrospective research handover; it has not been registered/promoted for operational deployment. The formally registered RF59-D2 shadow reference remains unchanged.
+Final research model
+THREE_HEAD is the selected model for the retrospective research handover. It combines three pathogen-specific Random Forest scores (influenza, RSV and COVID-19) using the maximum available eligible head score.
 
-Reproducibility boundary: Notebook 02 fits only its historical Logistic Regression baseline in memory. Notebooks 01 and 03–05 are primarily read-only verification of saved Databricks research artifacts. These notebooks cannot be fully reproduced with GitHub access alone: the original pinned data, Delta artifacts and suitable runtime require authorised Databricks access. Do not rerun original archive notebooks end-to-end to regenerate evidence.
-
-See the [main project README](../README.md) for the research question, data sources, feature engineering, evaluation, performance and limitations.
+Model governance: THREE_HEAD has not been formally promoted, deployed or registered. The existing RF59-D2 registered shadow reference remains unchanged.
+Reproducibility and scope
+- The cleaned notebooks are presentation and verification artifacts, not a complete raw-data-to-trained-model public pipeline.
+- Notebook 02 fits its historical Logistic Regression baseline in memory. Notebooks 01 and 03–05 principally inspect existing saved research artifacts without model training or Delta table writes.
+- Reproducing the checks requires authorised access to the pinned data and saved Delta tables in Databricks. Public GitHub access alone is insufficient.
+- The original, longer notebooks remain archived in Databricks as the experimental record. Do not run the original training, table-writing or one-time holdout cells just to reproduce the documentation.
+- The corrected seven-period comparison includes 2026_H1 as previously used development evidence, not an independent untouched test.
+For the full methodology, data sources, numerical results and limitations, see the [main project README](../README.md).
