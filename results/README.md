@@ -212,7 +212,7 @@ Before any operational promotion, the research would benefit from:
 Further performance optimisation should follow these improvements rather than replace proper evaluation and governance.
 
 ## 10. Reproducibility and Supporting Evidence
-
+- [MLflow Experiment Tracking and Model Governance](MLFLOW_EVIDENCE.md)
 The cleaned research notebooks provide the methodological and historical evidence supporting this report.
 
 - [Exploratory Data Analysis](../notebooks/01_exploratory_data_analysis_clean.py)
